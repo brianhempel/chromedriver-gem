@@ -28,10 +28,9 @@ unless File.exists?(File.join(here, 'downloads', 'chromedriver'))
   puts "Downloading chromedriver from #{chromedriver_url}..."
     
   raise "Failed to download chromedriver" unless (
-    system("curl #{chromedriver_url} > #{here}/chromedriver.zip") &&
-    system("unzip #{here}/chromedriver.zip") &&
-    system("rm #{here}/chromedriver.zip") &&
-    system("mv #{here}/chromedriver #{here}/downloads/chromedriver")
+    system("curl #{chromedriver_url} > #{here}/downloads/chromedriver.zip") &&
+    system("cd #{here}/downloads && unzip chromedriver.zip") &&
+    system("rm #{here}/downloads/chromedriver.zip")
   )
 end
 
