@@ -1,0 +1,35 @@
+#!/usr/bin/env ruby
+
+# TIMTOWTDI
+
+# download and install the appropriate version of chromedriver if we don't have it
+
+here = File.expand_path(File.dirname(__FILE__))
+
+unless File.exists?(File.join(here, 'downloads', 'chromedriver')
+  require File.join(here, '..', 'lib', 'chromedriver', 'version')
+  
+  case RUBY_PLATFORM
+  when /\b64\b.*linux|linux.*\b64\b/
+    platform = "linux64"  
+  when /linux/
+    platform = "linux32"
+  when /darwin/
+    platform = "mac"
+  else
+    raise "Ahh!  Needs a bit more work to download for Windows."
+  end
+
+  chromedriver_url = "http://chromium.googlecode.com/files/chromedriver_#{platform}_#{Chromedriver::VERSION}.zip"
+
+  system("mkdir #{here}/downloads")
+  
+  raise "Failed to download chromedriver" unless (
+    system("curl #{chromedriver_url} > #{here}/chromedriver.zip") &&
+    system("unzip #{here}/chromedriver.zip") &&
+    system("rm #{here}/chromedriver.zip") &&
+    system("mv #{here}/chromedriver #{here}/downloads/chromedriver")
+  )
+end
+
+exec "#{here}/downloads/chromedriver #{ARGV.join(' ')}"
