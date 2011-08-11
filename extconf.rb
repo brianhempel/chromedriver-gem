@@ -1,5 +1,5 @@
 # download and install the appropriate version of chromedriver
-require File.join(File.expand_path(File.dirname(__FILE__)), 'lib', 'chromedriver')
+require File.join(File.expand_path(File.dirname(__FILE__)), 'lib', 'chromedriver', 'version')
 
 case RUBY_PLATFORM
 when /\b64\b.*linux|linux.*\b64\b/
