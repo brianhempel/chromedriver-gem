@@ -14,7 +14,7 @@ end
 
 chromedriver_url = "http://chromium.googlecode.com/files/chromedriver_#{platform}_#{Chromedriver::VERSION}.zip"
 
-system("mkdir bin") &&
+system("mkdir bin")
 system("curl #{chromedriver_url} > chromedriver.zip") &&
 system("unzip chromedriver.zip") &&
 system("rm chromedriver.zip") &&
