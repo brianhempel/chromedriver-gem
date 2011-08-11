@@ -1,3 +1,5 @@
+# download and install the appropriate version of chromedriver
+
 require File.join('lib', 'chromedriver')
 
 case RUBY_PLATFORM
