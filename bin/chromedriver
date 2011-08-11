@@ -23,7 +23,10 @@ unless File.exists?(File.join(here, 'downloads', 'chromedriver'))
   chromedriver_url = "http://chromium.googlecode.com/files/chromedriver_#{platform}_#{Chromedriver::VERSION}.zip"
 
   system("mkdir #{here}/downloads")
-  
+
+
+  puts "Downloading chromedriver from #{chromedriver_url}..."
+    
   raise "Failed to download chromedriver" unless (
     system("curl #{chromedriver_url} > #{here}/chromedriver.zip") &&
     system("unzip #{here}/chromedriver.zip") &&
