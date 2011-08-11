@@ -6,7 +6,7 @@
 
 here = File.expand_path(File.dirname(__FILE__))
 
-unless File.exists?(File.join(here, 'downloads', 'chromedriver')
+unless File.exists?(File.join(here, 'downloads', 'chromedriver'))
   require File.join(here, '..', 'lib', 'chromedriver', 'version')
   
   case RUBY_PLATFORM
