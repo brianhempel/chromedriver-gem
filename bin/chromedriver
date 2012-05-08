@@ -20,7 +20,7 @@ unless File.exists?(File.join(here, 'downloads', 'chromedriver'))
     raise "Ahh!  Needs a bit more work to download for Windows."
   end
 
-  chromedriver_url = "http://chromium.googlecode.com/files/chromedriver_#{platform}_#{Chromedriver::VERSION}.zip"
+  chromedriver_url = "http://chromedriver.googlecode.com/files/chromedriver_#{platform}_#{Chromedriver::VERSION}.zip"
 
   system("mkdir #{here}/downloads")
 
