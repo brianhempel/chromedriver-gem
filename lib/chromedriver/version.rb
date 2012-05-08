@@ -1,3 +1,3 @@
 module Chromedriver
-  VERSION = "14.0.836.0"
+  VERSION = "19.0.1068.0"
 end
